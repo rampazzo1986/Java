@@ -11,7 +11,7 @@ public class UsuarioBean {
 	private String nome;
 	private String email;
 	private String senha;
-	private String confirmarSenha;
+	private String confirmaSenha;
 	public String getNome() {
 		return nome;
 	}
@@ -30,11 +30,11 @@ public class UsuarioBean {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public String getConfirmarSenha() {
-		return confirmarSenha;
+	public String getConfirmaSenha() {
+		return confirmaSenha;
 	}
-	public void setConfirmarSenha(String confirmarSenha) {
-		this.confirmarSenha = confirmarSenha;
+	public void setConfirmaSenha(String confirmaSenha) {
+		this.confirmaSenha = confirmaSenha;
 	}
 	
 	public String novo() {
@@ -43,7 +43,7 @@ public class UsuarioBean {
 	
 	public String salvar() {
 		FacesContext context = FacesContext.getCurrentInstance();
-		if (!this.confirmarSenha.equalsIgnoreCase(this.confirmarSenha)) {
+		if (!this.confirmaSenha.equalsIgnoreCase(this.confirmaSenha)) {
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
 					"Senha confirmada incorretamente",""));
 			return "usuario";
